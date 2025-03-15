@@ -79,12 +79,12 @@ Script di atas saya buat hanya sekedar untuk mendramatisir(?) agar seolah-olah a
 Script di atas merupakan batasan/syarat untuk melakukan suatu keputusan berdasarkan kondisi yang ditentukan.
 “ -–play=* “ merepresentasikan base argumen, yang kemudian dapat dilanjutkan dengan judul trek agar program yang diinginkan dapat berjalan, “ * ” menandakan input setelah –-play= dapat berupa kata/trek apapun dan akan menjadi argumen 1 (melanjutkan “ --play= “).
 
-Speak to Me
+### a. Speak to Me
 Untuk lagu ini, kamu memutuskan untuk membuat sebuah fitur yang memanggil API yang baru saja kamu temukan kemarin, https://github.com/annthurium/affirmations untuk menampilkan word of affirmation setiap detik.
 Speak to Me.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, word of affirmation baru harus ditampilkan tiap detik.
 
-
+![Screenshot 2025-03-15 214243](https://github.com/user-attachments/assets/51ec90ee-61d3-4dfe-bfab-d51d3bc4c357)
 #case “$trek” in digunakan untuk membuat trek-trek yang bisa dijadikan sebagai argumen 1
 #”Speak to Me” adalah trek pertama
 #Dari blok hijau sampai hijau hanyalah pemanis juga, seperti script dramatisasi di awal tadi, agar ada tampilan semacam loading sebelum program dieksekusi.
@@ -97,12 +97,12 @@ jq -r ‘.affirmation’ untuk mencetak file JSON secara gundul (tanpa tanda-tan
 sleep 1 mempause terminal selama 1 detik
 ;; digunakan untuk membedakan case ini dengan case selanjutnya
 
-On the Run
+### b. On the Run
 Selanjutnya, kamu memutuskan untuk membuat sebuah progress bar yang berjalan dengan interval random (setiap progress bertambah dalam interval waktu yang random dengan range 0.1 detik sampai 1 detik).
 On the Run.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, progress bar harus memiliki perhitungan persentase, dan panjang dari progress bar tidak berubah ubah (selalu dari ujung kiri terminal ke ujung kanan terminal seperti pada gif)
 
-
+![Screenshot 2025-03-15 214257](https://github.com/user-attachments/assets/33f41b05-3c65-41f5-911c-7cb7a944e7be)
 #”On the Run” adalah trek kedua
 #Dilanjut dengan tampilan progres secara manual tadi
 
@@ -113,12 +113,13 @@ sleep $(......* 0.9’) menunda progres bar agar prosesnya berjalan secara berka
 echo “Done” sebagai pemanis untuk mencetak Done
 ;; merupakan pemisah case ini dengan case lain
 
-Time
+### c. Time
 Singkat saja, untuk time, kamu memutuskan untuk membuat live clock yang menunjukkan tanggal, jam, menit dan detik.
 Time.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, jam harus setidaknya menunjukkan tahun, bulan, tanggal, jam, menit, dan detik yang diperbaharui setiap detik.
 
 
+![Screenshot 2025-03-15 224715](https://github.com/user-attachments/assets/599859ec-cd60-4f66-bf2a-56f0029667e1)
 #”Time” adalah trek ketiga
 #dilanjut tampilan progres seperti sebelum-sebelumnya
 while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
@@ -130,16 +131,17 @@ sleep 1 mempause terminal selama 1 detik
 tput cuu 4 untuk menggeser output terminal sebanyak 4 baris ke atas, agar jam terlihat kena refresh tiap detiknya
 ;; merupakan pemisah satu case dengan case lain
 
-Money
+### d. Money
 Kamu teringat dengan program yang sangat disukai oleh teman mu yang bernama cmatrix. Kamu pun memutuskan untuk membuat program yang mirip, tetapi mengganti isinya dengan simbol mata uang seperti $ € £ ¥ ¢ ₹ ₩ ₿ ₣ dan lain lainnya.
 Money.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, matrix tersusun oleh simbol mata uang minimal 5 simbol yang berbeda.
 
 
+![Screenshot 2025-03-15 214358](https://github.com/user-attachments/assets/cdb8d354-cc19-41fb-b82b-56dab045b90b)
 #”Money” merupakan trek keempat
 #dilanjut tampilan progres seperti sebelumnya
 
-
+![Screenshot 2025-03-15 214422](https://github.com/user-attachments/assets/2859d78d-bdc5-4bb1-8cd7-f1a25939fb6a)
 echo -e "\033[2J\033[?25l" untuk clear terminal dan menyembunyikan kursor dari terminal
 R dan C adalah command untuk mengambil baris dan kolom secara random
 SYMBOLS adalah simbol sesuai ketentuan yang akan ditampilkan
@@ -153,15 +155,16 @@ for (.....); do — done akan menghapus sisa-sisa jejak simbol sebelumnya setela
 & akan membuat semua proses dari dijalankan di background, agar beberapa baris simbol dapat dicetak pada waktu yang sama
 sleep 0.05 memberikan waktu sekian detik untuk baris simbol selanjutnya dapat dicetak
 
+![Screenshot 2025-03-15 234222](https://github.com/user-attachments/assets/9ac64665-1f9a-4753-b2e6-eb208972dcff)
 script tersebut merupakan referensi saya dalam membuat efek matrix ini. sc: BruXy: Matrix effect in BASH
 
 
-Brain Damage
+### d. Brain Damage
 Untuk lagu Brain Damage, kamu mendapatkan ide untuk menampilkan proses yang sedang berjalan, seperti task manager tetapi menampilkannya di dalam terminal dan membuat agar task manager tersebut menampilkan data baru setiap detiknya.
 Brain Damage.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, data harus sesuai dengan ps/top dan sejenisnya.
 
-
+![Screenshot 2025-03-15 214445](https://github.com/user-attachments/assets/04b78b4c-88f2-481a-af3d-3a6418fa7c33)
 #”Playing” merupakan trek terakhir/kelima
 #dilanjut dengan progres seperti sebelum-sebelumnya
 while true membuat commandnya me-looping
@@ -173,10 +176,14 @@ ps -eo akan menampilkan proses yang sedang dijalankan, kemudian disortir melalui
 awk ‘NR<==13’ membuat proses yang ditampilkan hanyalah 13 baris teratas
 
 
-
+![Screenshot 2025-03-15 214515](https://github.com/user-attachments/assets/c856cb52-e8fe-48fb-826d-1c9ffb8866f6)
 #” * “ merupakan semua trek selain 5 trek di atas (yang tidak ada di input). Misal kalau ngasih input “ ./dsotm --play=”Cinta Satu Malam” “, karena “Cinta Satu Malam” bukan trek yang ada di database, maka akan mencetak “maaf abangku,...... lain yah”
+
 
 ;; merupakan pemisah satu case dengan case lain
 esac merupakan akhir dari case, untuk mengakhiri case
 else adalah jika input yang diberi tidak sesuai kondisi-kondisi yang sudah ditentukan. Misal kita masukin “ ./dsotm play lagu dong “, maka akan muncul info “banh… format inputnya loh salah:( “
 fi ada penanda akhir dari if
+
+### Di sini juga bisa dicek:)
+https://docs.google.com/document/d/1Zu8GYXqj5HwukhYgjAWSPCiNbVtTwV30KleZEwF1S6E/edit?tab=t.0
