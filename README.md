@@ -135,48 +135,46 @@ Solved by. 057_Ananda Fitri Wibowo
 - dilanjut tampilan progres seperti sebelumnya
 
 ![Screenshot 2025-03-15 214422](https://github.com/user-attachments/assets/2859d78d-bdc5-4bb1-8cd7-f1a25939fb6a)
-echo -e "\033[2J\033[?25l" untuk clear terminal dan menyembunyikan kursor dari terminal
-R dan C adalah command untuk mengambil baris dan kolom secara random
-SYMBOLS adalah simbol sesuai ketentuan yang akan ditampilkan
-p dan l untuk menentukan panjang dan letak baris matrix secara random yang akan ditampilkan
-for(.......) adalah iterasi dari baris ke sekian (lihat menggunakan R)
-c=${.....} digunakan untuk mengambil simbol secara random untuk ditampilkan
-echo -e yang atas mencetak simbol dalam warna hijau, yang bawah mencetaknya dalam warna putih
-sleep mempause tampilan sebesar 0.05 detik, menentukan seberapa lama simbol(matrix) akan dicetak
-if [....], then — fi akan menghapus simbol-simbol setelah dicetak, untuk memberi kesan pudar
-for (.....); do — done akan menghapus sisa-sisa jejak simbol sebelumnya setelah simbol dicetak sampai ujung
-& akan membuat semua proses dari dijalankan di background, agar beberapa baris simbol dapat dicetak pada waktu yang sama
-sleep 0.05 memberikan waktu sekian detik untuk baris simbol selanjutnya dapat dicetak
+* echo -e "\033[2J\033[?25l" untuk clear terminal dan menyembunyikan kursor dari terminal
+* R dan C adalah command untuk mengambil baris dan kolom secara random
+* SYMBOLS adalah simbol sesuai ketentuan yang akan ditampilkan
+* p dan l untuk menentukan panjang dan letak baris matrix secara random yang akan ditampilkan
+* for(.......) adalah iterasi dari baris ke sekian (lihat menggunakan R)
+* c=${.....} digunakan untuk mengambil simbol secara random untuk ditampilkan
+* echo -e yang atas mencetak simbol dalam warna hijau, yang bawah mencetaknya dalam warna putih
+* sleep mempause tampilan sebesar 0.05 detik, menentukan seberapa lama simbol(matrix) akan dicetak
+* if [....], then — fi akan menghapus simbol-simbol setelah dicetak, untuk memberi kesan pudar
+* for (.....); do — done akan menghapus sisa-sisa jejak simbol sebelumnya setelah simbol dicetak sampai ujung
+* & akan membuat semua proses dari dijalankan di background, agar beberapa baris simbol dapat dicetak pada waktu yang sama
+* sleep 0.05 memberikan waktu sekian detik untuk baris simbol selanjutnya dapat dicetak
 
 ![Screenshot 2025-03-15 234222](https://github.com/user-attachments/assets/9ac64665-1f9a-4753-b2e6-eb208972dcff)
-script tersebut merupakan referensi saya dalam membuat efek matrix ini. sc: BruXy: Matrix effect in BASH
+* script tersebut merupakan referensi saya dalam membuat efek matrix ini. sc: BruXy: Matrix effect in BASH
 
 
 ### d. Brain Damage
-Untuk lagu Brain Damage, kamu mendapatkan ide untuk menampilkan proses yang sedang berjalan, seperti task manager tetapi menampilkannya di dalam terminal dan membuat agar task manager tersebut menampilkan data baru setiap detiknya.
-Brain Damage.mp4
-Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, data harus sesuai dengan ps/top dan sejenisnya.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Untuk lagu Brain Damage, kamu mendapatkan ide untuk menampilkan proses yang sedang berjalan, seperti task manager tetapi menampilkannya di dalam terminal dan membuat agar task manager tersebut menampilkan data baru setiap detiknya. Brain Damage.mp4. Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, data harus sesuai dengan ps/top dan sejenisnya.
 
 ![Screenshot 2025-03-15 214445](https://github.com/user-attachments/assets/04b78b4c-88f2-481a-af3d-3a6418fa7c33)
-#”Playing” merupakan trek terakhir/kelima
-#dilanjut dengan progres seperti sebelum-sebelumnya
-while true membuat commandnya me-looping
-do – done merupakan batas command apa yang harus dilakukan
-echo “====” merupakan pemanis biar tampilan task manager kw lebih bagus
-echo “USER…… COMMAND” adalah nama pada tabel (sortir proses)
-ps -eo akan menampilkan proses yang sedang dijalankan, kemudian disortir melalui -o menjadi hanya menampilkan user, pid, cpu, mem, stime, command
-“ | “ merupakan pipe untuk mengambil output sebelumnya menjadi input ke awk nya
-awk ‘NR<==13’ membuat proses yang ditampilkan hanyalah 13 baris teratas
+- ”Playing” merupakan trek terakhir/kelima
+- dilanjut dengan progres seperti sebelum-sebelumnya
+- while true membuat commandnya me-looping
+- do – done merupakan batas command apa yang harus dilakukan
+- echo “====” merupakan pemanis biar tampilan task manager kw lebih bagus
+- echo “USER…… COMMAND” adalah nama pada tabel (sortir proses)
+- ps -eo akan menampilkan proses yang sedang dijalankan, kemudian disortir melalui -o menjadi hanya menampilkan user, pid, cpu, mem, stime, command
+- “ | “ merupakan pipe untuk mengambil output sebelumnya menjadi input ke awk nya
+- awk ‘NR<==13’ membuat proses yang ditampilkan hanyalah 13 baris teratas
 
 
 ![Screenshot 2025-03-15 214515](https://github.com/user-attachments/assets/c856cb52-e8fe-48fb-826d-1c9ffb8866f6)
-#” * “ merupakan semua trek selain 5 trek di atas (yang tidak ada di input). Misal kalau ngasih input “ ./dsotm --play=”Cinta Satu Malam” “, karena “Cinta Satu Malam” bukan trek yang ada di database, maka akan mencetak “maaf abangku,...... lain yah”
+- ” * “ merupakan semua trek selain 5 trek di atas (yang tidak ada di input). Misal kalau ngasih input “ ./dsotm --play=”Cinta Satu Malam” “, karena “Cinta Satu -Malam” bukan trek yang ada di database, maka akan mencetak “maaf abangku,...... lain yah”
 
 
-;; merupakan pemisah satu case dengan case lain
-esac merupakan akhir dari case, untuk mengakhiri case
-else adalah jika input yang diberi tidak sesuai kondisi-kondisi yang sudah ditentukan. Misal kita masukin “ ./dsotm play lagu dong “, maka akan muncul info “banh… format inputnya loh salah:( “
-fi ada penanda akhir dari if
+* ;; merupakan pemisah satu case dengan case lain
+* esac merupakan akhir dari case, untuk mengakhiri case
+* else adalah jika input yang diberi tidak sesuai kondisi-kondisi yang sudah ditentukan. Misal kita masukin “ ./dsotm play lagu dong “, maka akan muncul info “banh… format inputnya loh salah:( “
+* fi ada penanda akhir dari if
 
 ### Di sini juga bisa dicek:)
 https://docs.google.com/document/d/1Zu8GYXqj5HwukhYgjAWSPCiNbVtTwV30KleZEwF1S6E/edit?tab=t.0
