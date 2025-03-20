@@ -70,7 +70,8 @@ nano poppo_siroyo.sh
 
 
 # Soal 3
-3. Solved by. 057_Ananda Fitri Wibowo
+Solved by. 057_Ananda Fitri Wibowo
+
 Untuk merayakan ulang tahun ke 52 album The Dark Side of the Moon, tim PR Pink Floyd mengadakan sebuah lomba dimana peserta diminta untuk membuat sebuah script bertemakan setidaknya 5 dari 10 lagu dalam album tersebut. Sebagai salah satu peserta, kamu memutuskan untuk memilih Speak to Me, On the Run, Time, Money, dan Brain Damage. Saat program ini dijalankan, terminal harus dibersihkan terlebih dahulu agar tidak mengganggu tampilan dari fungsi fungsi yang kamu buat. Program ini dijalankan dengan cara ./dsotm.sh --play=”<Track>” dengan Track sebagai nama nama lagu yang kamu pilih. [Author: Afnaan / honque]
 
 #Tampilan awal dulu hehe + penggunaan if untuk case input trek yang berbeda-beda
@@ -87,9 +88,9 @@ Speak to Me.mp4
 Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, word of affirmation baru harus ditampilkan tiap detik.
 
 ![Screenshot 2025-03-15 214243](https://github.com/user-attachments/assets/51ec90ee-61d3-4dfe-bfab-d51d3bc4c357)
-#case “$trek” in digunakan untuk membuat trek-trek yang bisa dijadikan sebagai argumen 1
-#”Speak to Me” adalah trek pertama
-#Dari blok hijau sampai hijau hanyalah pemanis juga, seperti script dramatisasi di awal tadi, agar ada tampilan semacam loading sebelum program dieksekusi.
+- case “$trek” in digunakan untuk membuat trek-trek yang bisa dijadikan sebagai argumen 1
+- ”Speak to Me” adalah trek pertama
+- Dari blok hijau sampai hijau hanyalah pemanis juga, seperti script dramatisasi di awal tadi, agar ada tampilan semacam loading sebelum program dieksekusi.
 
 while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
 
