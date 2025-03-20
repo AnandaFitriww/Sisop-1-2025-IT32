@@ -72,20 +72,18 @@ nano poppo_siroyo.sh
 # Soal 3
 Solved by. 057_Ananda Fitri Wibowo
 
-&nbsp;&nbsp;&nbsp;&nbsp;Untuk merayakan ulang tahun ke 52 album The Dark Side of the Moon, tim PR Pink Floyd mengadakan sebuah lomba dimana peserta diminta untuk membuat sebuah script bertemakan setidaknya 5 dari 10 lagu dalam album tersebut. Sebagai salah satu peserta, kamu memutuskan untuk memilih Speak to Me, On the Run, Time, Money, dan Brain Damage. Saat program ini dijalankan, terminal harus dibersihkan terlebih dahulu agar tidak mengganggu tampilan dari fungsi fungsi yang kamu buat. Program ini dijalankan dengan cara ./dsotm.sh --play=”<Track>” dengan Track sebagai nama nama lagu yang kamu pilih. [Author: Afnaan / honque]
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Untuk merayakan ulang tahun ke 52 album The Dark Side of the Moon, tim PR Pink Floyd mengadakan sebuah lomba dimana peserta diminta untuk membuat sebuah script bertemakan setidaknya 5 dari 10 lagu dalam album tersebut. Sebagai salah satu peserta, kamu memutuskan untuk memilih Speak to Me, On the Run, Time, Money, dan Brain Damage. Saat program ini dijalankan, terminal harus dibersihkan terlebih dahulu agar tidak mengganggu tampilan dari fungsi fungsi yang kamu buat. Program ini dijalankan dengan cara ./dsotm.sh --play=”<Track>” dengan Track sebagai nama nama lagu yang kamu pilih. [Author: Afnaan / honque]
 
-#Tampilan awal dulu hehe + penggunaan if untuk case input trek yang berbeda-beda
+*Tampilan awal dulu hehe + penggunaan if untuk case input trek yang berbeda-beda
 ![Screenshot 2025-03-15 214133](https://github.com/user-attachments/assets/f537f888-6498-489c-91da-af5e295b14de)
-Script di atas saya buat hanya sekedar untuk mendramatisir(?) agar seolah-olah ada proses yang harus dilakukan sebelum input trek dieksekusi. Sleep membuat proses eksekusi dipause selama sekian detik. Clear akan menghapus semua output sebelumnya dari terminal.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Script di atas saya buat hanya sekedar untuk mendramatisir(?) agar seolah-olah ada proses yang harus dilakukan sebelum input trek dieksekusi. Sleep membuat proses eksekusi dipause selama sekian detik. Clear akan menghapus semua output sebelumnya dari terminal.
 
 ![Screenshot 2025-03-15 214222](https://github.com/user-attachments/assets/2e5aebfc-7c29-4aba-882c-34fb1c7a2136)
-Script di atas merupakan batasan/syarat untuk melakukan suatu keputusan berdasarkan kondisi yang ditentukan.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Script di atas merupakan batasan/syarat untuk melakukan suatu keputusan berdasarkan kondisi yang ditentukan.
 “ -–play=* “ merepresentasikan base argumen, yang kemudian dapat dilanjutkan dengan judul trek agar program yang diinginkan dapat berjalan, “ * ” menandakan input setelah –-play= dapat berupa kata/trek apapun dan akan menjadi argumen 1 (melanjutkan “ --play= “).
 
 ### a. Speak to Me
-Untuk lagu ini, kamu memutuskan untuk membuat sebuah fitur yang memanggil API yang baru saja kamu temukan kemarin, https://github.com/annthurium/affirmations untuk menampilkan word of affirmation setiap detik.
-Speak to Me.mp4
-Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, word of affirmation baru harus ditampilkan tiap detik.
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Untuk lagu ini, kamu memutuskan untuk membuat sebuah fitur yang memanggil API yang baru saja kamu temukan kemarin, https://github.com/annthurium/affirmations untuk menampilkan word of affirmation setiap detik. Speak to Me.mp4. Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, word of affirmation baru harus ditampilkan tiap detik.
 
 ![Screenshot 2025-03-15 214243](https://github.com/user-attachments/assets/51ec90ee-61d3-4dfe-bfab-d51d3bc4c357)
 - case “$trek” in digunakan untuk membuat trek-trek yang bisa dijadikan sebagai argumen 1
@@ -100,48 +98,41 @@ Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, 
 * ;; digunakan untuk membedakan case ini dengan case selanjutnya
 
 ### b. On the Run
-Selanjutnya, kamu memutuskan untuk membuat sebuah progress bar yang berjalan dengan interval random (setiap progress bertambah dalam interval waktu yang random dengan range 0.1 detik sampai 1 detik).
-On the Run.mp4
-Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, progress bar harus memiliki perhitungan persentase, dan panjang dari progress bar tidak berubah ubah (selalu dari ujung kiri terminal ke ujung kanan terminal seperti pada gif)
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Selanjutnya, kamu memutuskan untuk membuat sebuah progress bar yang berjalan dengan interval random (setiap progress bertambah dalam interval waktu yang random dengan range 0.1 detik sampai 1 detik). On the Run.mp4. Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, progress bar harus memiliki perhitungan persentase, dan panjang dari progress bar tidak berubah ubah (selalu dari ujung kiri terminal ke ujung kanan terminal seperti pada gif)
 
 ![Screenshot 2025-03-15 214257](https://github.com/user-attachments/assets/33f41b05-3c65-41f5-911c-7cb7a944e7be)
-#”On the Run” adalah trek kedua
-#Dilanjut dengan tampilan progres secara manual tadi
+- ”On the Run” adalah trek kedua
+- Dilanjut dengan tampilan progres secara manual tadi
 
-pnj = 50 merupakan panjang dari progres bar yang akan ditampilkan (sepanjang 50 karakter)
-for ((i=1; i<=pnj; i++)); do merupakan iterasi untuk loopnya, yakni sebanyak pnj (50)
-printf “\r……. / pnj)) mencetak progres bar, mengisinya dengan karakter “ / ”, dan menampilkan persentase progresnya juga
-sleep $(......* 0.9’) menunda progres bar agar prosesnya berjalan secara berkala dengan jeda secara random
-echo “Done” sebagai pemanis untuk mencetak Done
-;; merupakan pemisah case ini dengan case lain
+* pnj = 50 merupakan panjang dari progres bar yang akan ditampilkan (sepanjang 50 karakter)
+* for ((i=1; i<=pnj; i++)); do merupakan iterasi untuk loopnya, yakni sebanyak pnj (50)
+* printf “\r……. / pnj)) mencetak progres bar, mengisinya dengan karakter “ / ”, dan menampilkan persentase progresnya juga
+* sleep $(......* 0.9’) menunda progres bar agar prosesnya berjalan secara berkala dengan jeda secara random
+* echo “Done” sebagai pemanis untuk mencetak Done
+* ;; merupakan pemisah case ini dengan case lain
 
 ### c. Time
-Singkat saja, untuk time, kamu memutuskan untuk membuat live clock yang menunjukkan tanggal, jam, menit dan detik.
-Time.mp4
-Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, jam harus setidaknya menunjukkan tahun, bulan, tanggal, jam, menit, dan detik yang diperbaharui setiap detik.
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Singkat saja, untuk time, kamu memutuskan untuk membuat live clock yang menunjukkan tanggal, jam, menit dan detik. Time.mp4. Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, jam harus setidaknya menunjukkan tahun, bulan, tanggal, jam, menit, dan detik yang diperbaharui setiap detik.
 
 ![Screenshot 2025-03-15 224715](https://github.com/user-attachments/assets/599859ec-cd60-4f66-bf2a-56f0029667e1)
-#”Time” adalah trek ketiga
-#dilanjut tampilan progres seperti sebelum-sebelumnya
-while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
+- ”Time” adalah trek ketiga
+- dilanjut tampilan progres seperti sebelum-sebelumnya
+- while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
 
-echo “=====” hanya sebagai tampilan tambahan biar tampilan waktu lebih terlihat bagus
-date +’ %a %b %e %Y%n %H:%M:%S’ digunakan untuk menampilkan data waktu
-%a: hari (disingkat), %: bulan (disingkat), %e: tanggal, %Y: tahun, %n: enter, %H: jam dalam format 24 jam, %M: menit, %S: detik
-sleep 1 mempause terminal selama 1 detik
-tput cuu 4 untuk menggeser output terminal sebanyak 4 baris ke atas, agar jam terlihat kena refresh tiap detiknya
-;; merupakan pemisah satu case dengan case lain
+* echo “=====” hanya sebagai tampilan tambahan biar tampilan waktu lebih terlihat bagus
+* date +’ %a %b %e %Y%n %H:%M:%S’ digunakan untuk menampilkan data waktu
+* %a: hari (disingkat), %: bulan (disingkat), %e: tanggal, %Y: tahun, %n: enter, %H: jam dalam format 24 jam, %M: menit, %S: detik
+* sleep 1 mempause terminal selama 1 detik
+* tput cuu 4 untuk menggeser output terminal sebanyak 4 baris ke atas, agar jam terlihat kena refresh tiap detiknya
+* ;; merupakan pemisah satu case dengan case lain
 
 ### d. Money
-Kamu teringat dengan program yang sangat disukai oleh teman mu yang bernama cmatrix. Kamu pun memutuskan untuk membuat program yang mirip, tetapi mengganti isinya dengan simbol mata uang seperti $ € £ ¥ ¢ ₹ ₩ ₿ ₣ dan lain lainnya.
-Money.mp4
-Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, matrix tersusun oleh simbol mata uang minimal 5 simbol yang berbeda.
-
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kamu teringat dengan program yang sangat disukai oleh teman mu yang bernama cmatrix. Kamu pun memutuskan untuk membuat program yang mirip, tetapi mengganti isinya dengan simbol mata uang seperti $ € £ ¥ ¢ ₹ ₩ ₿ ₣ dan lain lainnya. Money.mp4. Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, tetapi untuk fungsionalitas, matrix tersusun oleh simbol mata uang minimal 5 simbol yang berbeda.
 
 ![Screenshot 2025-03-15 214358](https://github.com/user-attachments/assets/cdb8d354-cc19-41fb-b82b-56dab045b90b)
-#”Money” merupakan trek keempat
-#dilanjut tampilan progres seperti sebelumnya
+
+- ”Money” merupakan trek keempat
+- dilanjut tampilan progres seperti sebelumnya
 
 ![Screenshot 2025-03-15 214422](https://github.com/user-attachments/assets/2859d78d-bdc5-4bb1-8cd7-f1a25939fb6a)
 echo -e "\033[2J\033[?25l" untuk clear terminal dan menyembunyikan kursor dari terminal
