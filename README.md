@@ -5,6 +5,7 @@
 
 # Soal 1
 Solved by. 061_Raihan Fahri Ghazali
+
 membuat file poppo_siroyo.sh
 ```
 touch poppo_siroyo.sh
