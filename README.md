@@ -92,13 +92,12 @@ Diberikan kebebasan artistik, tidak harus sama persis dengan tampilan pada gif, 
 - ”Speak to Me” adalah trek pertama
 - Dari blok hijau sampai hijau hanyalah pemanis juga, seperti script dramatisasi di awal tadi, agar ada tampilan semacam loading sebelum program dieksekusi.
 
-while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
-
-curl -s “https…….” akan memanggil API dari link yang tertera (curl nya), -s membuat proses dilakukan secara silent atau menghilangkan informasi dari progres curl
-“ | “ merupakan pipe, mengambil output curl sebagai input selanjutnya
-jq -r ‘.affirmation’ untuk mencetak file JSON secara gundul (tanpa tanda-tanda petik/quote)
-sleep 1 mempause terminal selama 1 detik
-;; digunakan untuk membedakan case ini dengan case selanjutnya
+* while true adalah menginisiasi loopnya, agar program dijalankan terus menerus, do — done adalah batasan command yang harus dilakukan dalam loop
+* curl -s “https…….” akan memanggil API dari link yang tertera (curl nya), -s membuat proses dilakukan secara silent atau menghilangkan informasi dari progres curl
+* “ | “ merupakan pipe, mengambil output curl sebagai input selanjutnya
+* jq -r ‘.affirmation’ untuk mencetak file JSON secara gundul (tanpa tanda-tanda petik/quote)
+* sleep 1 mempause terminal selama 1 detik
+* ;; digunakan untuk membedakan case ini dengan case selanjutnya
 
 ### b. On the Run
 Selanjutnya, kamu memutuskan untuk membuat sebuah progress bar yang berjalan dengan interval random (setiap progress bertambah dalam interval waktu yang random dengan range 0.1 detik sampai 1 detik).
