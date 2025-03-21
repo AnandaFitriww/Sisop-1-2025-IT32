@@ -3,6 +3,14 @@
 - Ananda Fitri Wibowo (5027241057)
 - Raihan Fahri Ghazali (5027241061)
 
+Dalam perjalanan mengerjakan tugas menggunakan Kali Linux, saya menemui berbagai tantangan yang cukup menguji ketekunan dan kemampuan troubleshooting saya. Awalnya, saya merasa antusias karena lingkungan Linux yang fleksibel menawarkan banyak potensi bagi pengolahan data, namun semangat itu segera diuji oleh serangkaian kendala teknis.
+
+Pertama, saya menghadapi masalah kompatibilitas perangkat lunak. Kali Linux, yang memang terkenal sebagai distribusi untuk keamanan siber, memiliki konfigurasi dan paket yang berbeda dari distribusi Linux biasa. Saat mencoba menjalankan perintah *awk* untuk menganalisis file *reading_data.csv*, saya sempat terganggu oleh error yang mengindikasikan adanya masalah dependency. Hal ini memaksa saya untuk mengecek kembali paket-paket yang diperlukan, serta memastikan bahwa versi *awk* dan tool-tool lainnya sudah sesuai.
+
+Selanjutnya, kendala muncul saat saya harus menavigasi lingkungan command line yang terkadang terasa kurang ramah bagi pengguna baru. Meskipun dokumentasi sudah tersedia, saya sering merasa bingung dengan sintaks dan opsi-opsi perintah yang ada. Proses trial and error dalam mencari parameter yang tepat untuk mengeksekusi perintah yang diinginkan menghabiskan waktu, namun dari situ saya belajar banyak tentang cara kerja shell scripting di Linux.
+
+Tidak hanya itu, masalah hak akses (permissions) juga sempat menjadi batu sandungan. Beberapa perintah yang saya jalankan memerlukan akses root, sehingga saya harus memahami dengan baik bagaimana menggunakan *sudo* tanpa mengorbankan keamanan sistem. Saya pun belajar bahwa penanganan hak akses di Kali Linux harus dilakukan dengan hati-hati agar tidak menimbulkan celah keamanan.
+
 # Soal 1
 Solved by. 061_Raihan Fahri Ghazali
 
